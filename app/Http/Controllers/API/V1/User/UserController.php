@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends BaseController
 {
-
-
     public function register(Request $request): JsonResponse
     {
         $request->validate(
@@ -30,7 +28,7 @@ class UserController extends BaseController
             'password' => Hash::make($request->get('password'))
         ]);
 
-        return $this->sendResponse("Usuário registrado com sucesso", $user->createToken('API Token')->plainTextToken);
+        return $this->sendResponse("Usuário registrado com sucesso", $user->createToken('API Token')->plainTextToken, 201);
     }
 
     public function get(Request $request): JsonResponse
