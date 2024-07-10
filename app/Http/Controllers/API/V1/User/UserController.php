@@ -33,6 +33,9 @@ class UserController extends BaseController
 
     public function get(Request $request): JsonResponse
     {
+        if (!$request->user())
+            return $this->sendError("Usuário não encontrado", 404);
+
         $user = User::findOrFail($request->user()->id);
 
         if ($user)

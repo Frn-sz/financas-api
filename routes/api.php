@@ -9,7 +9,7 @@ Route::prefix("/user")->group(function () {
 
     Route::post("/auth", [UserController::class, "auth"]);
 
-    Route::middleware("auth:sanctum")->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
         Route::get("/", [UserController::class, "get"]);
 
         Route::patch("/update", [UserController::class, "update"]);
