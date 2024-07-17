@@ -2,9 +2,41 @@
 
 ## Tecnologias usadas
 
-- PHP
-- Laravel
-- PostgresSQL
+-   PHP
+-   Laravel
+-   PostgresSQL
+
+
+## Requisitos para subir local
+
+- Ter PHP >8.2 instalado
+- Ter Composer instalado
+- Ter PostgresSQL instalado
+- Criar banco "financas" no Postgres e completar no .env
+
+### Comandos
+```bash
+composer install
+```
+```bash
+php artisan key:generate
+```
+```bash
+php artisan migrate
+```
+```bash
+npm install
+```
+
+## Rodar servidor local
+
+### Importante
+
+- Para testar no Postman, colocar header "Accept: application/json" em todas as requisições.
+
+```bash
+php artisan serve
+```
 
 ## Endpoints
 
@@ -12,7 +44,7 @@
 
 Registro
 
-- /api/user/register - POST
+-   /api/user/register - POST
 
 ```json
 {
@@ -25,7 +57,7 @@ Registro
 
 Login
 
-- /api/user/auth - POST
+-   /api/user/auth - POST
 
 ```json
 {
@@ -38,7 +70,7 @@ Login
 
 Editar
 
-- /api/user/update/ - PATCH
+-   /api/user/update/ - PATCH
 
 ```json
 {
@@ -49,5 +81,4 @@ Editar
 
 Excluir
 
-- /api/user/delete
-
+-   /api/user/delete
